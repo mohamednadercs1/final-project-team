@@ -1,21 +1,27 @@
 # Team Workflow
 
 ## Who uploads what
-| Person | Role | Upload to |
+| Member | Role | Files |
 |---|---|---|
-| 1 | Web scraping | `src/scraping.py`, `data/scraped_scores.csv` |
-| 2 | Cleaning & parsing | `src/cleaning.py`, `notebooks/cleaning.ipynb` |
-| 3 | Merging & features | `src/features.py`, `data/final_dataset.csv` |
-| 4 | EDA & visualization | `notebooks/eda.ipynb`, `results/figures/` |
-| 5 | Modeling & README | `src/modeling.py`, `README.md`, `docs/` |
+| 1 | Cleaning & EDA | `notebooks/01_cleaning_eda.ipynb`, `report/01_dataset_cleaning_eda.md` |
+| 2 | External data | `notebooks/02_external_data.ipynb`, `scripts/load_external_data.py`, `report/02_external_data.md` |
+| 3 | Scraping | `notebooks/03_scraping_validation.ipynb`, `scripts/scrape_scores.py`, `report/03_scraping_ethics.md` |
+| 4 | Features & merging | `notebooks/04_feature_engineering.ipynb`, `scripts/merge_data.py`, `data/final_dataset.csv`, `report/04_features_integration.md` |
+| 5 | Modeling & report | `notebooks/05_modeling_evaluation.ipynb`, `src/`, `report/05_modeling_results.md`, `report/final_report.md`, `README.md` |
 
-## Agreed schema for scraped scores
+## Contract for `data/final_dataset.csv` (Member 4 → Member 5)
+One row per movie. Required: `release_year`, `success` (1 if revenue ≥ $100M).
+Expected features (missing ones are skipped with a warning):
+`budget, budget_missing, runtime, is_sequel, release_month, num_stars, crew_size, director_avg_revenue, genre_* (one-hot), critic_score, audience_score`
+Post-release (used only for the leakage demo): `vote_average, vote_count, popularity`.
+**Do not** compute `director_avg_revenue` using the movie's own revenue or future movies.
+
+## Scraped scores schema (Member 3)
 `movie_id, imdb_id, critic_score, audience_score`
 
 ## Rules
-1. Never push directly to `main`. Work on your own branch: `person1-scraping`, `person2-cleaning`, ...
-2. Commit small and often, with clear messages (e.g. `Add metacritic scraper`).
-3. Open a Pull Request to `main`; one teammate reviews it before merge.
-4. Pull before you start working: `git pull origin main`.
-5. Never commit API keys. Put them in a local `.env` file (it is git-ignored).
-6. Only touch your own files, to avoid merge conflicts.
+1. Work on your own branch (`member1-cleaning`, ...) and open a Pull Request to `main`.
+2. Commit small and often, with clear messages.
+3. `git pull origin main` before you start.
+4. Never commit API keys (use a local `.env`, it is git-ignored).
+5. Only touch your own files, to avoid merge conflicts.
