@@ -1,0 +1,12 @@
+model,features,n_feat,TimeCV PR-AUC,Test PR-AUC,PR-AUC 95% CI,Test ROC-AUC,full - this [95% CI],full better?
+(always predict success),-,0,,0.4974,-,0.5,-,-
+Logistic Regression,budget only,1,0.4222,0.5188,"[0.472, 0.569]",0.4875,"+0.148 [+0.102, +0.193]",yes
+Logistic Regression,budget + genre,20,0.4321,0.5195,"[0.472, 0.571]",0.5212,"+0.147 [+0.108, +0.188]",yes
+Logistic Regression,full - history,64,0.5048,0.6513,"[0.604, 0.701]",0.6486,"+0.015 [-0.002, +0.033]",no (CI includes 0)
+Logistic Regression,history only,12,0.4319,0.5894,"[0.540, 0.644]",0.6031,"+0.077 [+0.034, +0.120]",yes
+Logistic Regression,full greenlight,76,0.5087,0.6664,"[0.620, 0.719]",0.6586,-,-
+XGBoost,budget only,1,0.4219,0.5524,"[0.503, 0.606]",0.5551,"+0.131 [+0.087, +0.174]",yes
+XGBoost,budget + genre,20,0.4447,0.5787,"[0.527, 0.632]",0.5861,"+0.105 [+0.063, +0.150]",yes
+XGBoost,full - history,64,0.5185,0.6693,"[0.622, 0.716]",0.6673,"+0.014 [-0.019, +0.046]",no (CI includes 0)
+XGBoost,history only,12,0.4601,0.6186,"[0.567, 0.672]",0.6101,"+0.065 [+0.034, +0.095]",yes
+XGBoost,full greenlight,76,0.5247,0.6833,"[0.634, 0.732]",0.675,-,-

@@ -1,0 +1,9 @@
+model,history,Test PR-AUC,PR-AUC 95% CI,Test ROC-AUC,lag - current [95% CI]
+Logistic Regression,current (no lag),0.6664,"[0.620, 0.719]",0.6586,-
+XGBoost,current (no lag),0.6833,"[0.634, 0.732]",0.675,-
+Logistic Regression,lag 365 d,0.6586,"[0.613, 0.711]",0.654,"-0.008 [-0.016, -0.001]"
+XGBoost,lag 365 d,0.6849,"[0.638, 0.734]",0.6736,"+0.002 [-0.014, +0.017]"
+Logistic Regression,lag 545 d,0.6547,"[0.609, 0.708]",0.6509,"-0.012 [-0.020, -0.004]"
+XGBoost,lag 545 d,0.6865,"[0.641, 0.736]",0.6717,"+0.003 [-0.013, +0.020]"
+Logistic Regression,lag 730 d,0.6512,"[0.606, 0.703]",0.6471,"-0.015 [-0.025, -0.004]"
+XGBoost,lag 730 d,0.6757,"[0.631, 0.723]",0.6614,"-0.008 [-0.030, +0.015]"

@@ -1,0 +1,5 @@
+model,features,ROC-AUC,PR-AUC,delta PR-AUC [95% CI]
+Logistic Regression,greenlight,0.6599,0.6723,
+Logistic Regression,+ critic score,0.7171,0.7176,"+0.045 [+0.019, +0.073]"
+XGBoost,greenlight,0.6632,0.6916,
+XGBoost,+ critic score,0.7119,0.7131,"+0.022 [-0.014, +0.055]"

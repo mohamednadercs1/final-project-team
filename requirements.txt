@@ -1,0 +1,21 @@
+# Core
+numpy
+pandas
+scikit-learn
+matplotlib
+joblib
+
+# Models / explainability
+lightgbm
+xgboost
+shap
+
+# App
+streamlit
+
+# Data collection (tmdb_enrichment.py, scraper.py)
+requests
+beautifulsoup4
+
+# Tests
+pytest
