@@ -40,7 +40,7 @@ data/tmdb_5000_*.csv ─► data_cleaning ─► tmdb_enrichment ─► scraper 
 ## Setup
 
 ```bash
-git clone https://github.com/mohamednadercs1/final_project.git final_project_team
+git clone https://github.com/mohamednadercs1/final-project-team.git final_project_team
 cd final_project_team
 python3.11 -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
